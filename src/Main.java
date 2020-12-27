@@ -4,9 +4,9 @@ import com.ques.interviewquestions.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // change the object type to the class name under com.ques you want to run
-        SumReverseLL ob = new SumReverseLL();
+        StackOfPlates ob = new StackOfPlates();
         ob.run();
     }
 }
