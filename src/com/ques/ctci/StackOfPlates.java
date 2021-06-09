@@ -3,7 +3,7 @@ package com.ques.ctci;
 import java.util.*;
 
 /**
- * Chap-4
+ * Chap-3
  * Implement a data structure Set of Plates. The set of plates should be kept as stacks of plates
  * such that after a certain size of the plate stack, a new stack is created. Implement push, pop,
  * and popAt method for this class.
@@ -13,22 +13,18 @@ public class StackOfPlates{
     ArrayList<Stack<Integer>> plates = new ArrayList<>();
     int limit=0, currentStack=-1;
     public void push(int val){
-        Stack<Integer> stack;
+        Stack<Integer> stack = new Stack<>();
         if (currentStack >= 0)
             stack = plates.get(currentStack);
-        else {
+        if(stack.size()>=limit || currentStack<0){
             stack = new Stack<>();
             currentStack++;
-        }
-        if(stack.size()>=limit){
-            currentStack++;
-            stack = new Stack<>();
-        }
-        stack.push(val);
-        if(currentStack < plates.size())
-            plates.set(currentStack,stack);
-        else
+            stack.push(val);
             plates.add(stack);
+        }else{
+            stack.push(val);
+            plates.set(currentStack,stack);
+        }
     }
 
     public int pop() throws Exception{

@@ -7,7 +7,7 @@ import com.datastructures.Stack;
 import java.util.Scanner;
 
 /**
- * Chap-2
+ * Chap-3
  * Implement a stack to have an additional method min which returns the minimum element
  */
 public class StackMinimum extends Stack{
